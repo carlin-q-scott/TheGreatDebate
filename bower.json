@@ -1,6 +1,6 @@
 {
-  "name": "meanjs",
-  "description": "Fullstack JavaScript with MongoDB, Express, AngularJS, and Node.js.",
+  "name": "the-great-debate",
+  "description": "A platform where people can particpate in debates but forced to support a side  they mmay not aggree with",
   "homepage": "http://meanjs.org/",
   "license": "MIT",
   "dependencies": {

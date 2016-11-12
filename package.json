@@ -1,14 +1,14 @@
 {
-  "name": "meanjs",
-  "description": "Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js.",
+  "name": "the-great-debate",
+  "description": "A platform where people can particpate in debates but forced to support a side  they mmay not aggree with",
   "version": "0.4.2",
   "meanjs-version": "0.4.2",
   "private": false,
-  "author": "https://github.com/meanjs/mean/graphs/contributors",
+  "author": "The Grand Debate",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/meanjs/mean.git"
+    "url": "https://carlin-scott@bitbucket.org/thegreatdebate/prototype.git"
   },
   "engines": {
     "node": ">=0.10.28",
