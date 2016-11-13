@@ -65,14 +65,14 @@ angular.module('core').controller('TopicController',
               'body': 'The electoral college is an important safeguard between popular opinion and executive office.',
               'sources':[{
                   "text": "George Washington's letter portrayed the Electoral College as protecting the electorate against disaster",
-                  "url": "en.wikipedia.org/article/george-washington-letters"
+                  "url": "http://en.wikipedia.org/article/george-washington-letters"
               }],
               comments: [
                   {
                       'commentType': 'rebuttal',
                       'body': 'James Madison portrayed the Electoral College differently: as a simple component in a democratic system.',
                       'sources': [{
-                          'url': 'en.wikipedia.org/article/james-madison-letters'
+                          'url': 'http://en.wikipedia.org/article/james-madison-letters'
                       }]
                   }
               ],
