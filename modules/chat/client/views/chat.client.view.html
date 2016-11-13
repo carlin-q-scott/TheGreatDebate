@@ -1,10 +1,13 @@
 <!-- The chat view -->
 <section class="container" ng-controller="ChatController">
   <div class="page-header">
-    <h1>Chat Example</h1>
+    <h1>
+      <small><strong>Proposed:</strong> The Electoral College should be abolished in favor of a popular vote.</small>
+      <button class='btn btn-primary pull-right' ng-click="join()">Join Discussion</button>
+    </h1>
   </div>
   <!-- The message form -->
-  <form class="col-xs-12 col-md-offset-4 col-md-4" ng-submit="sendMessage();">
+<!--   <form class="col-xs-12 col-md-offset-4 col-md-4" ng-submit="sendMessage();">
     <fieldset class="row">
       <div class="input-group">
         <input type="text" id="messageText" name="messageText" class="form-control" ng-model="messageText" placeholder="Enter new message">
@@ -13,17 +16,30 @@
         </span>
       </div>
     </fieldset>
-  </form>
+  </form> -->
   <ul class="list-unstyled">
     <!-- List all messages -->
-    <li class="col-xs-12 col-md-offset-4 col-md-4 chat-message" ng-repeat="message in messages">
+    <li class="col-xs-12 col-md-12 chat-message" ng-repeat="message in messages">
+      
       <small class="pull-right text-muted" ng-bind="message.created | date:'mediumTime'"></small>
+      
       <img ng-src="{{message.profileImageURL}}" alt="{{message.username}}" class="pull-left chat-profile-image" />
+      
       <div class="pull-left chat-message-details">
         <strong ng-bind="message.username"></strong>
-        <br>
+        <br />
         <span ng-bind="message.text"></span>
+        <br />
+        <div class="btn-group">
+          <button type="button" class="btn btn-default btn-xs" aria-label="Add Reaction" ng-click="addReaction(message)" title="Add Reaction">
+            <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+          </button>
+        </div>
       </div>
     </li>
   </ul>
+  <div class="text-right">
+    <button class="btn btn-info" ng-if="channel.joined" ng-click="addPoint()">Add Point</button>
+    <button class="btn btn-primary" ng-if="!channel.joined" ng-click="join()">Join Discussion</button>
+  </div>
 </section>
