@@ -1,4 +1,4 @@
-FROM node:0.12
+FROM gcr.io/google_appengine/nodejs
 
 # Install gem sass for  grunt-contrib-sass
 RUN apt-get update -qq && apt-get install -y build-essential

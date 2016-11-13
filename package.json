@@ -3,7 +3,7 @@
   "description": "A platform where people can particpate in debates but forced to support a side  they mmay not aggree with",
   "version": "0.4.2",
   "meanjs-version": "0.4.2",
-  "private": false,
+  "private": true,
   "author": "The Grand Debate",
   "license": "MIT",
   "repository": {
