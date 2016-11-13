@@ -2,9 +2,11 @@
 <section>
   <div class="form-group">
     <div class='list-group'>
-      <a href='#' class='list-group-item' ng-repeat='reaction in reactions' ng-click='react.value = reaction.value'>
-        <div class="list-group-item-heading" ng-class='reaction.value'></div>
-        <p class='list-group-item-text'>{{reaction.title}}</p>
+      <a href='#' class='list-group-item' ng-repeat='reaction in reactions' ng-click='react.value = reaction.value' ng-class="react.value === reaction.value ? 'active':''">
+        <p class='list-group-item-text'>
+          <div ng-class='reaction.value'></div>
+          {{reaction.title}} - {{reaction.description}}
+        </p>
       </a>
     </div>
     <label for="reason">Reason:</label>
