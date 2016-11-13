@@ -3,7 +3,8 @@
 angular.module('core').controller('TopicController', ['$scope', '$location', 'Authentication', '$modal',
     function ($scope, $location, Authentication, $modal) {
       $scope.user = {
-
+        username: "so-socrates",
+        points: 42
       };
 
         // Create a messages array
@@ -55,6 +56,9 @@ angular.module('core').controller('TopicController', ['$scope', '$location', 'Au
           resolve: {
             position: function() {
               return (Math.random() > .5) ? "for" : "against";
+            },
+            modalData: function() {
+              return {};
             }
           }
         });
@@ -67,13 +71,42 @@ angular.module('core').controller('TopicController', ['$scope', '$location', 'Au
         });
       };
 
-        $scope.addPoint = function(pointType) {
-            if (pointType === 'for') {
-                $scope.addingForPoint = true;
-            } else if (pointType === 'against') {
-                $scope.addingAgainstPoint = true;
+      $scope.addPoint = function(position) {
+        var pointModal = $modal.open({
+          animation: true,
+          templateUrl: 'modules/core/client/views/point.modal.client.view.html',
+          controller: 'ModalInstanceCtrl',
+          size: 'lg',
+          resolve: {
+            position: function() {
+              return position;
+            },
+            modalData: function() {
+              return {};
             }
-        };
+          }
+        });
+
+        pointModal.result.then(function (point) {
+          var newMessage = {
+              "position": position,
+              "title": point.tldr,
+              "body": point.body,
+              "sources":[{
+                  "text": point.citation,
+                  "url": "wwww.url-in-support.com"
+              }],
+              user: user,
+              comments: [],
+              created: new Date()
+          };
+
+          console.log("adding a point", newMessage);
+          $scope.messages.push(newMessage);
+        }, function () {
+          $log.info('Modal dismissed at: ' + new Date());
+        });
+      };
 
         $scope.submitPoint = function() {
             // Add to messages

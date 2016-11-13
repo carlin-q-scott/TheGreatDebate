@@ -6,17 +6,6 @@
       <button class='btn btn-primary pull-right' ng-if="!user.joined" ng-click="join()">Join Discussion</button>
     </h1>
   </div>
-  <!-- The message form -->
-  <!--   <form class="col-xs-12 col-md-offset-4 col-md-4" ng-submit="sendMessage();">
-      <fieldset class="row">
-        <div class="input-group">
-          <input type="text" id="messageText" name="messageText" class="form-control" ng-model="messageText" placeholder="Enter new message">
-          <span class="input-group-btn">
-            <button type="submit" class="btn btn-primary" ng-disabled="!messageText.length">Submit</button>
-          </span>
-        </div>
-      </fieldset>
-    </form> -->
   <div>
     <div class="col-md-6">
       <h4>Arguments for</h4>
@@ -33,7 +22,7 @@
               <p>{{ message.body }}</p>
               <div>
                 <div class="col-md-6">
-                  <h6>Sources</h6>
+                  <h6>Sources ({{message.sources.length}}):</h6>
                   <ul>
                     <li ng-repeat="src in message.sources">
                       {{ src.text }} <br />
@@ -70,7 +59,7 @@
         </li>
 
         <!--Response-->
-        <li class="col-xs-12 col-md-12 chat-message" ng-show="addingForPoint">
+       <!--  <li class="col-xs-12 col-md-12 chat-message" ng-show="addingForPoint">
           <div class="panel panel-info">
             <div class="panel-heading">
               <h3 class="panel-title">
@@ -78,39 +67,31 @@
               </h3>
             </div>
             <div class="panel-body form-group">
-              <!--TLDR-->
               <div class="form-group">
                 <label for="tldr">TL;DR</label>
                 <input type="text" ng-model="tldr" class="form-control" id="tldr" placeholder="TL;DR">
               </div>
 
-              <!--Body-->
               <div class="form-group">
                 <label for="responseBody">Make your point</label>
                 <textarea class="form-control" ng-model="body" id="responseBody" rows="3"></textarea>
               </div>
 
-              <!--Citation-->
               <div class="form-group">
                 <label for="citation">Citation</label>
                 <input type="text" ng-model="citation" class="form-control" id="citation" placeholder="Citation">
               </div>
 
-              <!--Citation explanation-->
               <div class="form-group">
                 <label for="citationExplanation">Citation Explanation (Optional)</label>
                 <input type="text" ng-model="citationExplanation" class="form-control" id="citationExplanation" placeholder="Citation Explanation">
               </div>
-
-              <!--TODO: rules of civility-->
-
-              <!--Submit button-->
               <div class="form-group">
                 <button class='btn btn-primary pull-right' ng-disabled="!canSubmit()" ng-click="submitPoint()">Submit Point</button>
               </div>
             </div>
           </div>
-        </li>
+        </li> -->
 
       </ul>
 
@@ -135,7 +116,7 @@
               <p>{{ message.body }}</p>
               <div>
                 <div class="col-md-6">
-                  <h6>Sources</h6>
+                  <h6>Sources ({{message.sources.length}}):</h6>
                   <ul>
                     <li ng-repeat="src in message.sources">
                       {{ src.text }} <br />
