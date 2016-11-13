@@ -1,7 +1,13 @@
 <!-- reaction modal -->
-<form>
-    <input type='radio' name='reaction' ng-repeat='reaction in reactions' ng-value='reaction.value' ng-model='react.value'>{{reaction.title}}</input>
+<section>
+  <div class='list-group'>
+    <div ng-repeat='reaction in reactions'>
+      <a href='#' class='list-group-item' ng-click='react.value = reaction.value'>
+        <img ng-class='reaction.value' />{{reaction.title}}
+      </a>
+    </div>
     <input type='text' name='reason' ng-model='react.reason'/>
-    <input type='submit' ng-click='close(react)'>Submit</input>
-    <input type="button" ng-click='dismiss()'>Cancel</input>
-</form>
+    <button ng-click='ok()'>Ok</button>
+    <button ng-click='cancel()'>Cancel</button>
+  </div>
+</section>

@@ -3,8 +3,6 @@
 // Create the 'chat' controller
 angular.module('chat').controller('ChatController',
   function ($scope, $location, Authentication, Socket, $modal, reactions) {
-    $scope.reactions = reactions;
-
     // Create a messages array
     $scope.messages = [
       {
@@ -81,7 +79,8 @@ angular.module('chat').controller('ChatController',
 
     $scope.addReaction = function (message){
       $modal.open({
-        templateUrl: '..\views\chat.client.reaction.view.html'
+        controller: 'ReactionsCtrl',
+        templateUrl: 'modules/chat/client/views/chat.client.reaction.view.html'
       })
       .result
       .then(function(reaction){
