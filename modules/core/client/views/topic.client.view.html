@@ -34,6 +34,8 @@
                   <h6>Comments ({{message.comments.length}}):</h6>
                   <ul>
                     <li ng-repeat="comment in message.comments">
+                      <strong>{{comment.commentType.toUpperCase()}}:</strong>
+                      <br/>
                       {{ comment.body }}<br />
                       <a target="_blank" ng-href="{{ comment.sources[0].url }}">{{ comment.sources[0].url }}</a>
                     </li>
@@ -58,40 +60,39 @@
           </div>
         </li>
 
-        <!--Response-->
-       <!--  <li class="col-xs-12 col-md-12 chat-message" ng-show="addingForPoint">
+        <!--Comment-->
+        <li class="col-xs-12 col-md-12 chat-message" ng-show="addingForComment">
           <div class="panel panel-info">
             <div class="panel-heading">
               <h3 class="panel-title">
-                <span>Enter response:</span>
+                <span>Enter comment:</span>
               </h3>
             </div>
             <div class="panel-body form-group">
               <div class="form-group">
-                <label for="tldr">TL;DR</label>
-                <input type="text" ng-model="tldr" class="form-control" id="tldr" placeholder="TL;DR">
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"><strong>Agreement</strong>
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"><strong>Rebuttal</strong>
+                </label>
               </div>
 
               <div class="form-group">
-                <label for="responseBody">Make your point</label>
-                <textarea class="form-control" ng-model="body" id="responseBody" rows="3"></textarea>
+                <label for="responseBody">Comment body</label>
+                <textarea class="form-control" ng-model="commentBody" id="responseBody" rows="3" placeholder="Keep it succinct."></textarea>
               </div>
 
               <div class="form-group">
-                <label for="citation">Citation</label>
-                <input type="text" ng-model="citation" class="form-control" id="citation" placeholder="Citation">
-              </div>
-
-              <div class="form-group">
-                <label for="citationExplanation">Citation Explanation (Optional)</label>
-                <input type="text" ng-model="citationExplanation" class="form-control" id="citationExplanation" placeholder="Citation Explanation">
+                <label for="citation">Citation URL</label>
+                <input type="text" ng-model="commentCitation" class="form-control" id="citation" placeholder="URL">
               </div>
               <div class="form-group">
-                <button class='btn btn-primary pull-right' ng-disabled="!canSubmit()" ng-click="submitPoint()">Submit Point</button>
+                <button class='btn btn-primary pull-right' ng-disabled="!canSubmitComment()" ng-click="submitComment(message)">Submit Comment</button>
               </div>
             </div>
           </div>
-        </li> -->
+        </li>
 
       </ul>
 
@@ -128,6 +129,8 @@
                   <h6>Comments ({{message.comments.length}}):</h6>
                   <ul>
                     <li ng-repeat="comment in message.comments">
+                      <strong>{{comment.commentType.toUpperCase()}}:</strong>
+                      <br/>
                       {{ comment.body }}<br />
                       <a target="_blank" ng-href="{{ comment.sources[0].url }}">{{ comment.sources[0].url }}</a>
                     </li>

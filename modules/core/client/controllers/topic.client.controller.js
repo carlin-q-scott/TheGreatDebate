@@ -19,6 +19,7 @@ angular.module('core').controller('TopicController',
                 }],
                 comments: [
                     {
+                        'commentType': 'agreement',
                         'body': 'This also occurs when looking at state legislative regions as well.',
                         'sources': [{
                             'url': 'www.washingtonpost.com/ articles/gerrymandering-in-2012-election-cost-votes'
@@ -37,6 +38,7 @@ angular.module('core').controller('TopicController',
                 }],
                 comments: [
                     {
+                        'commentType': 'rebuttal',
                         'body': 'James Madison portrayed the Electoral College differently: as a simple component in a democratic system.',
                         'sources': [{
                             'url': 'en.wikipedia.org/ article/james-madison-letters'
@@ -109,35 +111,34 @@ angular.module('core').controller('TopicController',
         });
       };
 
-        $scope.submitPoint = function() {
-            // Add to messages
-            var newMessage = {
-                "position": $scope.addingForPoint ? 'for' : 'against',
-                "title": $scope.tldr,
-                "body": $scope.body,
-                "sources":[{
-                    "text": $scope.citation,
-                    "url": "wwww.url-in-support.com"
+        $scope.submitComment = function() {
+            // Add to comments
+            var newComment = {
+                'commentType': 'agreement',
+                'body': $scope.commentBody,
+                'sources':[{
+                    'text': $scope.citationExplanation,
+                    'url': $scope.commentCitation
                 }],
-                comments: [],
                 created: new Date()
             };
-            $scope.messages.push(newMessage);
+            $scope.messages[0].comments.push(newComment);
 
             $scope.clearFields();
+            $scope.addingForComment = false;
         };
 
         $scope.clearFields = function() {
             $scope.addingForPoint = false;
             $scope.addingAgainstPoint = false;
             $scope.tldr = '';
-            $scope.body = '';
-            $scope.citation = '';
+            $scope.commentBody = '';
+            $scope.commentCitation = '';
             $scope.citationExplanation = '';
         };
 
-        $scope.canSubmit = function() {
-            return $scope.tldr && $scope.body && $scope.citation;
+        $scope.canSubmitComment = function() {
+            return $scope.commentBody && $scope.commentCitation;
         };
 
         // If user is not signed in then redirect back home
@@ -153,6 +154,10 @@ angular.module('core').controller('TopicController',
 
             // Clear the message text
             this.messageText = '';
+        };
+
+        $scope.addComment = function(message) {
+            $scope.addingForComment = true;
         };
         
         $scope.addReaction = function (message){
