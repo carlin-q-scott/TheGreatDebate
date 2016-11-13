@@ -85,7 +85,7 @@
   background-position: -168px;
   background-repeat: no-repeat;
 }
-.icon::before{
+.icon{
   width: 12px;
   height: 12px;
 }

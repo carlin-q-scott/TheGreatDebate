@@ -2,7 +2,7 @@
 
 angular.module('core').controller('TopicController',
     function ($scope, $location, Authentication, $modal, $log) {
-      $scope.user = user;
+      $scope.user = window.user;
       $scope.user.points = 42;
 
       // Create a messages array
