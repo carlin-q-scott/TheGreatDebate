@@ -13,14 +13,14 @@ angular.module('core').controller('TopicController',
               'body': "In the current system, the electoral college's structure means that the president elect has lost the popular vote in 2 of the last 7 elections.",
               'sources':[{
                   'text': "New York Times election results page",
-                  'url': "www.nytimes.com/ article/election-results-2000s"
+                  'url': "http://www.nytimes.com/article/election-results-2000s"
               }],
               comments: [
                   {
                       'commentType': 'agreement',
                       'body': 'This also occurs when looking at state legislative regions as well.',
                       'sources': [{
-                          'url': 'www.washingtonpost.com/ articles/gerrymandering-in-2012-election-cost-votes'
+                          'url': 'http://www.washingtonpost.com/articles/gerrymandering-in-2012-election-cost-votes'
                       }]
                   }
               ],
@@ -42,14 +42,14 @@ angular.module('core').controller('TopicController',
               'body': "Less populous states can be overrepresented due to the amount of time it takes to update a state's electoral college votes.",
               'sources':[{
                   'text': "New York Times election results page",
-                  'url': "www.nytimes.com/ article/election-results-2000s"
+                  'url': "http://www.nytimes.com/article/election-results-2000s"
               }],
               comments: [
                   {
                       'commentType': 'agreement',
                       'body': 'This also occurs when looking at state legislative regions as well.',
                       'sources': [{
-                          'url': 'www.washingtonpost.com/ articles/gerrymandering-in-2012-election-cost-votes'
+                          'url': 'http://www.washingtonpost.com/articles/gerrymandering-in-2012-election-cost-votes'
                       }]
                   }
               ],
@@ -72,7 +72,7 @@ angular.module('core').controller('TopicController',
                       'commentType': 'rebuttal',
                       'body': 'James Madison portrayed the Electoral College differently: as a simple component in a democratic system.',
                       'sources': [{
-                          'url': 'en.wikipedia.org/ article/james-madison-letters'
+                          'url': 'en.wikipedia.org/article/james-madison-letters'
                       }]
                   }
               ],
@@ -138,7 +138,7 @@ angular.module('core').controller('TopicController',
               "body": point.body,
               "sources":[{
                   "text": point.citation,
-                  "url": "wwww.url-in-support.com"
+                  "url": "http://www.url-in-support.com"
               }],
               user: point.user,
               comments: [],
