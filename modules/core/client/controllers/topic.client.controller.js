@@ -7,44 +7,44 @@ angular.module('core').controller('TopicController', ['$scope', '$location', 'Au
       };
 
         // Create a messages array
-      $scope.messages = [
-        {
-          'position': 'for',
-          'title': 'Popular results differ from Electoral results frequently.',
-          'body': "In the current system, the electoral college's structure means that the president elect has lost the popular vote in 2 of the last 7 elections.",
-          'sources':[{
-            'text': 'Excerpted text from cited source showing statistics',
-            'url': 'wwww.url-in-support.com'
-          }],
-          comments: [
+        $scope.messages = [
             {
-              'body': 'Here is an argument that refutes this argument',
-              'sources': [{
-                'url': 'wwww.rebuttalcite.org'
-              }]
-            }
-          ],
-          created: new Date()
-        },
-        {
-          'position': 'against',
-          'title': 'Elections need safeguards.',
-          'body': 'The electoral college is an important safeguard between popular opinion and executive office.',
-          'sources':[{
-            'text': 'Excerpted text from cited source showing statistics',
-            'url': 'wwww.url-in-support.com'
-          }],
-          comments: [
+                'position': 'for',
+                'title': 'Popular results differ from Electoral results frequently.',
+                'body': "In the current system, the electoral college's structure means that the president elect has lost the popular vote in 2 of the last 7 elections.",
+                'sources':[{
+                    'text': "New York Times election results page",
+                    'url': "www.nytimes.com/ article/election-results-2000s"
+                }],
+                comments: [
+                    {
+                        'body': 'This also occurs when looking at state legislative regions as well.',
+                        'sources': [{
+                            'url': 'www.washingtonpost.com/ articles/gerrymandering-in-2012-election-cost-votes'
+                        }]
+                    }
+                ],
+                created: new Date()
+            },
             {
-              'body': 'Here is an argument that refutes this argument',
-              'sources': [{
-                'url': 'wwww.rebuttalcite.org'
-              }]
+                'position': 'against',
+                'title': 'Elections need safeguards.',
+                'body': 'The electoral college is an important safeguard between popular opinion and executive office.',
+                'sources':[{
+                    "text": "George Washington's letter portrayed the Electoral College as protecting the electorate against disaster",
+                    "url": "en.wikipedia.org/article/george-washington-letters"
+                }],
+                comments: [
+                    {
+                        'body': 'James Madison portrayed the Electoral College differently: as a simple component in a democratic system.',
+                        'sources': [{
+                            'url': 'en.wikipedia.org/ article/james-madison-letters'
+                        }]
+                    }
+                ],
+                created: new Date()
             }
-          ],
-          created: new Date()
-        }
-      ];
+        ];
 
       $scope.join = function() {
         var joinModal = $modal.open({
@@ -107,18 +107,18 @@ angular.module('core').controller('TopicController', ['$scope', '$location', 'Au
         };
 
         // If user is not signed in then redirect back home
-      if (!Authentication.user) {
-        $location.path('/');
-      }
+        if (!Authentication.user) {
+            $location.path('/');
+        }
         // Create a controller method for sending messages
-      $scope.sendMessage = function () {
+        $scope.sendMessage = function () {
             // Create a new message object
-        var message = {
-          text: this.messageText
-        };
+            var message = {
+                text: this.messageText
+            };
 
             // Clear the message text
-        this.messageText = '';
-      };
+            this.messageText = '';
+        };
     }
 ]);
