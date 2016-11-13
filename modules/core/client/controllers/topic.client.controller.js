@@ -9,14 +9,14 @@ angular.module('core').controller('TopicController', ['$scope', '$location', 'Au
                 'title': 'Popular results differ from Electoral results frequently.',
                 'body': "In the current system, the electoral college's structure means that the president elect has lost the popular vote in 2 of the last 7 elections.",
                 'sources':[{
-                    'text': 'Excerpted text from cited source showing statistics',
-                    'url': 'wwww.url-in-support.com'
+                    'text': "New York Times election results page",
+                    'url': "www.nytimes.com/ article/election-results-2000s"
                 }],
                 comments: [
                     {
-                        'body': 'Here is an argument that refutes this argument',
+                        'body': 'This also occurs when looking at state legislative regions as well.',
                         'sources': [{
-                            'url': 'wwww.rebuttalcite.org'
+                            'url': 'www.washingtonpost.com/ articles/gerrymandering-in-2012-election-cost-votes'
                         }]
                     }
                 ],
@@ -27,14 +27,14 @@ angular.module('core').controller('TopicController', ['$scope', '$location', 'Au
                 'title': 'Elections need safeguards.',
                 'body': 'The electoral college is an important safeguard between popular opinion and executive office.',
                 'sources':[{
-                    'text': 'Excerpted text from cited source showing statistics',
-                    'url': 'wwww.url-in-support.com'
+                    "text": "George Washington's letter portrayed the Electoral College as protecting the electorate against disaster",
+                    "url": "en.wikipedia.org/article/george-washington-letters"
                 }],
                 comments: [
                     {
-                        'body': 'Here is an argument that refutes this argument',
+                        'body': 'James Madison portrayed the Electoral College differently: as a simple component in a democratic system.',
                         'sources': [{
-                            'url': 'wwww.rebuttalcite.org'
+                            'url': 'en.wikipedia.org/ article/james-madison-letters'
                         }]
                     }
                 ],
