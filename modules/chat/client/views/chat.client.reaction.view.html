@@ -1,0 +1,7 @@
+<!-- reaction modal -->
+<form>
+    <input type='radio' name='reaction' ng-repeat='reaction in reactions' ng-value='reaction.value' ng-model='react.value'>{{reaction.title}}</input>
+    <input type='text' name='reason' ng-model='react.reason'/>
+    <input type='submit' ng-click='close(react)'>Submit</input>
+    <input type="button" ng-click='dismiss()'>Cancel</input>
+</form>

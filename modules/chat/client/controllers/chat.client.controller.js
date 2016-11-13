@@ -1,8 +1,8 @@
 'use strict';
 
 // Create the 'chat' controller
-angular.module('chat').controller('ChatController', ['$scope', '$location', 'Authentication', 'Socket',
-  function ($scope, $location, Authentication, Socket) {
+angular.module('chat').controller('ChatController',
+  function ($scope, $location, Authentication, Socket, $modal) {
     // Create a messages array
     $scope.messages = [
       {
@@ -76,5 +76,11 @@ angular.module('chat').controller('ChatController', ['$scope', '$location', 'Aut
     $scope.$on('$destroy', function () {
       Socket.removeListener('chatMessage');
     });
+
+    $scope.addFlag = function (message){
+      $modal.open({
+        templateUrl: '..\views\chat.client.reaction.view.html'
+      });
+    };
   }
-]);
+);
