@@ -56,7 +56,7 @@
                     <button type="button" class="btn btn-default btn-xs" aria-label="Add Flag" ng-click="addFlag(message)" title="Add Flag">
                       <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
                     </button>
-                    <button type="button" ng-show="user.joined" class="btn btn-default btn-xs" aria-label="Add Comment" ng-click="addComment(message)" title="Add Comment">
+                    <button type="button" class="btn btn-default btn-xs" aria-label="Add Comment" ng-click="addComment(message)" title="Add Comment">
                       <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
                     </button>
                   </div>
@@ -157,18 +157,25 @@
               </div>
             </div>
             <div class="panel-footer">
-              <div class="btn-group">
-                <button type="button" ng-show="user.joined" class="btn btn-default btn-xs" aria-label="Add Reaction" ng-click="addReaction(message)" title="Add Reaction">
-                  <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-                </button>
-                <button type="button" ng-show="user.joined" class="btn btn-default btn-xs" aria-label="Add Flag" ng-click="addFlag(message)" title="Add Flag">
-                  <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
-                </button>
-                <button type="button" ng-show="user.joined" class="btn btn-default btn-xs" aria-label="Add Comment" ng-click="addComment('against')" title="Add Comment">
-                  <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-                </button>
+              <div class="row" style="margin: 0 5px">
+                <div class="btn-group pull-left" ng-show="user.joined">
+                  <button type="button" class="btn btn-default btn-xs" aria-label="Add Reaction" ng-click="addReaction(message)" title="Add Reaction">
+                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                  </button>
+                  <button type="button" class="btn btn-default btn-xs" aria-label="Add Flag" ng-click="addFlag(message)" title="Add Flag">
+                    <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+                  </button>
+                  <button type="button" class="btn btn-default btn-xs" aria-label="Add Comment" ng-click="addComment('against')" title="Add Comment">
+                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+                  </button>
+                </div>
+                <ul class="list-inline list-unstyled">
+                  <li class="pull-left" ng-repeat='reaction in message.reactions'>
+                      <span data-toggle='tooltip' class="img img-responsive" title="{{reaction.reason}}" ng-class='reaction.value'></span>
+                  </li>
+                </ul>
+                <small class="pull-right text-muted" ng-bind="message.created | date:'mediumTime'"></small>
               </div>
-              <small class="pull-right text-muted" ng-bind="message.created | date:'mediumTime'"></small>
             </div>
           </div>
         </li>

@@ -28,12 +28,12 @@ angular.module('core').controller('TopicController',
                 username: "locke",
                 points: 700
               },
-                reactions: [
-                    {
-                        value: 'good-citation',
-                        reason: 'thanks for citing empirical data!'
-                    }
-                ],
+              reactions: [
+                {
+                  value: 'good-citation',
+                  reason: 'thanks for citing empirical data!'
+                }
+              ],
               created: new Date()
           },
           {
@@ -80,12 +80,12 @@ angular.module('core').controller('TopicController',
                 username: "demosthenes",
                 points: 800
               },
-                reactions: [
-                    {
-                        value: 'low-quality-source',
-                        reason: 'wikipedia is great and all but anyone can edit an article'
-                    }
-                ],
+              reactions: [
+                {
+                  value: 'low-quality-source',
+                  reason: 'wikipedia is great and all but anyone can edit an article'
+                }
+              ],
               created: new Date()
           }
       ];
