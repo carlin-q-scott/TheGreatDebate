@@ -1,0 +1,79 @@
+.ad-hominem::before{
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("http://i.imgur.com/DlZoGqq.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.strawman::before{
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("http://i.imgur.com/DlZoGqq.png");
+  background-size: cover;
+  background-position: -24px;
+  background-repeat: no-repeat;
+}
+.circular::before{
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("http://i.imgur.com/DlZoGqq.png");
+  background-size: cover;
+  background-position: -48px;
+  background-repeat: no-repeat;
+}
+.dichotomy::before{
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("http://i.imgur.com/DlZoGqq.png");
+  background-size: cover;
+  background-position: -72px;
+  background-repeat: no-repeat;
+}
+.incorrect-source::before{
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("http://i.imgur.com/DlZoGqq.png");
+  background-size: cover;
+  background-position: -120px;
+  background-repeat: no-repeat;
+}
+.low-quality-source::before{
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("http://i.imgur.com/DlZoGqq.png");
+  background-size: cover;
+  background-position: -96px;
+  background-repeat: no-repeat;
+}
+.good-point::before{
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("http://i.imgur.com/DlZoGqq.png");
+  background-size: cover;
+  background-position: -144px;
+  background-repeat: no-repeat;
+}
+.good-citation::before{
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("http://i.imgur.com/DlZoGqq.png");
+  background-size: cover;
+  background-position: -168px;
+  background-repeat: no-repeat;
+}

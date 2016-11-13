@@ -2,14 +2,13 @@
 <section>
   <div class="form-group">
     <div class='list-group'>
-      <div ng-repeat='reaction in reactions'>
-        <a href='#' class='list-group-item' ng-click='react.value = reaction.value'>
-          <div ng-class='reaction.value' />{{reaction.title}}
-        </a>
-      </div>
+      <a href='#' class='list-group-item' ng-repeat='reaction in reactions' ng-click='react.value = reaction.value'>
+        <div class="list-group-item-heading" ng-class='reaction.value'></div>
+        <p class='list-group-item-text'>{{reaction.title}}</p>
+      </a>
     </div>
     <label for="reason">Reason:</label>
-    <textarea class="form-control" rows="5" id="reason" ng-model='react.reason'></textarea>
+    <textarea class="form-control" rows="3" id="reason" ng-model='react.reason'></textarea>
     <button type="button" class="btn btn-success" ng-click='ok()'>Ok</button>
     <button type="button" class="btn btn-default" ng-click='cancel()'>Cancel</button>
   </div>
