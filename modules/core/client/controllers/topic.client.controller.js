@@ -2,10 +2,8 @@
 
 angular.module('core').controller('TopicController',
     function ($scope, $location, Authentication, $modal, $log) {
-      $scope.user = {
-        username: "so-socrates",
-        points: 42
-      };
+      $scope.user = user;
+      $scope.user.points = 42;
 
       // Create a messages array
       $scope.messages = [
