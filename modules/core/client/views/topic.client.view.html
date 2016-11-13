@@ -55,7 +55,7 @@
                 <button type="button" ng-show="user.joined" class="btn btn-default btn-xs" aria-label="Add Flag" ng-click="addFlag(message)" title="Add Flag">
                   <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
                 </button>
-                <button type="button" ng-show="user.joined" class="btn btn-default btn-xs" aria-label="Add Comment" ng-click="addComment(message)" title="Add Comment">
+                <button type="button" ng-show="user.joined" class="btn btn-default btn-xs" aria-label="Add Comment" ng-click="addComment('for')" title="Add Comment">
                   <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
                 </button>
               </div>
@@ -157,7 +157,7 @@
                 <button type="button" ng-show="user.joined" class="btn btn-default btn-xs" aria-label="Add Flag" ng-click="addFlag(message)" title="Add Flag">
                   <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
                 </button>
-                <button type="button" ng-show="user.joined" class="btn btn-default btn-xs" aria-label="Add Comment" ng-click="addComment(message)" title="Add Comment">
+                <button type="button" ng-show="user.joined" class="btn btn-default btn-xs" aria-label="Add Comment" ng-click="addComment('against')" title="Add Comment">
                   <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
                 </button>
               </div>
@@ -166,7 +166,43 @@
           </div>
         </li>
       </ul>
-      <!--TODO: copy over input elements when it's finished for left side-->
+
+      <!--Comment-->
+      <li class="col-xs-12 col-md-12 chat-message" ng-show="addingAgainstComment">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              <span>Enter comment:</span>
+            </h3>
+          </div>
+          <div class="panel-body form-group">
+            <div class="form-group">
+              <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option1"><strong>Agreement</strong>
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option2"><strong>Rebuttal</strong>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="responseBody">Comment body</label>
+              <textarea class="form-control" ng-model="commentBody" id="responseBody2" rows="3" placeholder="Keep it succinct."></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="citation">Citation URL</label>
+              <input type="text" ng-model="commentCitation" class="form-control" id="citation3" placeholder="URL">
+            </div>
+            <div class="form-group">
+              Remember to keep your comment related to the topic and to refrain from personal attacks.
+            </div>
+            <div class="form-group">
+              <button class='btn btn-primary pull-right' ng-disabled="!canSubmitComment()" ng-click="submitComment(message)">Submit Comment</button>
+            </div>
+          </div>
+        </div>
+      </li>
       <div class="text-right">
         <button class="btn btn-info" ng-if="user.joined && user.position=='against'" ng-click="addPoint('against')">Add Point</button>
       </div>

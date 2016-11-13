@@ -31,6 +31,29 @@ angular.module('core').controller('TopicController',
               created: new Date()
           },
           {
+              'position': 'for',
+              'title': 'The Electoral College gives some states an unfair advantage.',
+              'body': "Less populous states can be overrepresented due to the amount of time it takes to update a state's electoral college votes.",
+              'sources':[{
+                  'text': "New York Times election results page",
+                  'url': "www.nytimes.com/ article/election-results-2000s"
+              }],
+              comments: [
+                  {
+                      'commentType': 'agreement',
+                      'body': 'This also occurs when looking at state legislative regions as well.',
+                      'sources': [{
+                          'url': 'www.washingtonpost.com/ articles/gerrymandering-in-2012-election-cost-votes'
+                      }]
+                  }
+              ],
+              user: {
+                  username: "locke",
+                  points: 700
+              },
+              created: new Date()
+          },
+          {
               'position': 'against',
               'title': 'Elections need safeguards.',
               'body': 'The electoral college is an important safeguard between popular opinion and executive office.',
@@ -162,8 +185,13 @@ angular.module('core').controller('TopicController',
             this.messageText = '';
         };
 
-        $scope.addComment = function(message) {
-            $scope.addingForComment = true;
+        $scope.addComment = function(forOrAgainst) {
+            if (forOrAgainst === 'against') {
+                $scope.addingAgainstComment = true;
+            } else {
+                $scope.addingForComment = true;
+            }
+
         };
         
         $scope.addReaction = function (message){
