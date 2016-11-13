@@ -5,24 +5,24 @@ angular.module('articles').run(['Menus',
   function (Menus) {
     // Add the articles dropdown item
     Menus.addMenuItem('topbar', {
-      title: 'Topics',
-      state: 'topics',
+      title: 'Categories',
+      state: 'categories',
       type: 'dropdown',
       roles: ['*']
     });
 
     // Add the dropdown list item
-    Menus.addSubMenuItem('topbar', 'topics', {
+    Menus.addSubMenuItem('topbar', 'categories', {
       title: 'Politics',
-      state: 'topics.politics'
+      state: 'categories.politics'
     });
-    Menus.addSubMenuItem('topbar', 'topics', {
+    Menus.addSubMenuItem('topbar', 'categories', {
       title: 'Science',
-      state: 'topics.science'
+      state: 'categories.science'
     });
-    Menus.addSubMenuItem('topbar', 'topics', {
+    Menus.addSubMenuItem('topbar', 'categories', {
       title: 'Social Issues',
-      state: 'topics.social'
+      state: 'categories.social'
     });
   }
 ]);
