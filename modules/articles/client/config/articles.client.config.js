@@ -24,12 +24,5 @@ angular.module('articles').run(['Menus',
       title: 'Social Issues',
       state: 'topics.social'
     });
-
-    // Add the dropdown create item
-    Menus.addSubMenuItem('topbar', 'topics', {
-      title: 'Create Articles',
-      state: 'articles.create',
-      roles: ['user']
-    });
   }
 ]);
