@@ -3,7 +3,7 @@
   <div class="page-header">
     <h1>
       <small><strong>Proposed:</strong> The Electoral College should be abolished in favor of a popular vote.</small>
-      <button class='btn btn-primary pull-right' ng-if="!joined" ng-click="join()">Join Discussion</button>
+      <button class='btn btn-primary pull-right' ng-if="!user.joined" ng-click="join()">Join Discussion</button>
     </h1>
   </div>
   <!-- The message form -->
@@ -54,13 +54,13 @@
             </div>
             <div class="panel-footer">
               <div class="btn-group">
-                <button type="button" ng-show="joined" class="btn btn-default btn-xs" aria-label="Add Reaction" ng-click="addReaction(message)" title="Add Reaction">
+                <button type="button" ng-show="user.joined" class="btn btn-default btn-xs" aria-label="Add Reaction" ng-click="addReaction(message)" title="Add Reaction">
                   <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
                 </button>
-                <button type="button" ng-show="joined" class="btn btn-default btn-xs" aria-label="Add Flag" ng-click="addFlag(message)" title="Add Flag">
+                <button type="button" ng-show="user.joined" class="btn btn-default btn-xs" aria-label="Add Flag" ng-click="addFlag(message)" title="Add Flag">
                   <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
                 </button>
-                <button type="button" ng-show="joined" class="btn btn-default btn-xs" aria-label="Add Comment" ng-click="addComment(message)" title="Add Comment">
+                <button type="button" ng-show="user.joined" class="btn btn-default btn-xs" aria-label="Add Comment" ng-click="addComment(message)" title="Add Comment">
                   <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
                 </button>
               </div>
@@ -115,7 +115,7 @@
       </ul>
 
       <div class="text-right">
-        <button class="btn btn-info" ng-if="joined && !addingForPoint" ng-click="addPoint('for')">Add Point</button>
+        <button class="btn btn-info" ng-if="user.joined && user.position=='for' && !addingForPoint" ng-click="addPoint('for')">Add Point</button>
       </div>
     </div>
 
@@ -156,13 +156,13 @@
             </div>
             <div class="panel-footer">
               <div class="btn-group">
-                <button type="button" ng-show="joined" class="btn btn-default btn-xs" aria-label="Add Reaction" ng-click="addReaction(message)" title="Add Reaction">
+                <button type="button" ng-show="user.joined" class="btn btn-default btn-xs" aria-label="Add Reaction" ng-click="addReaction(message)" title="Add Reaction">
                   <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
                 </button>
-                <button type="button" ng-show="joined" class="btn btn-default btn-xs" aria-label="Add Flag" ng-click="addFlag(message)" title="Add Flag">
+                <button type="button" ng-show="user.joined" class="btn btn-default btn-xs" aria-label="Add Flag" ng-click="addFlag(message)" title="Add Flag">
                   <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
                 </button>
-                <button type="button" ng-show="joined" class="btn btn-default btn-xs" aria-label="Add Comment" ng-click="addComment(message)" title="Add Comment">
+                <button type="button" ng-show="user.joined" class="btn btn-default btn-xs" aria-label="Add Comment" ng-click="addComment(message)" title="Add Comment">
                   <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
                 </button>
               </div>
@@ -173,13 +173,13 @@
       </ul>
       <!--TODO: copy over input elements when it's finished for left side-->
       <div class="text-right">
-        <button class="btn btn-info" ng-if="joined" ng-click="addPoint('against')">Add Point</button>
+        <button class="btn btn-info" ng-if="user.joined && user.position=='against'" ng-click="addPoint('against')">Add Point</button>
       </div>
     </div>
   </div>
   <br />
   <div class="text-right">
-    <button class="btn btn-primary" ng-if="!joined" ng-click="join()">Join Discussion</button>
+    <button class="btn btn-primary" ng-if="!user.joined" ng-click="join()">Join Discussion</button>
   </div>
 </section>
 

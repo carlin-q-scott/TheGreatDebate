@@ -1,7 +1,11 @@
 'use strict';
 
-angular.module('core').controller('TopicController', ['$scope', '$location', 'Authentication',
-    function ($scope, $location, Authentication) {
+angular.module('core').controller('TopicController', ['$scope', '$location', 'Authentication', '$modal',
+    function ($scope, $location, Authentication, $modal) {
+      $scope.user = {
+
+      };
+
         // Create a messages array
       $scope.messages = [
         {
@@ -42,9 +46,26 @@ angular.module('core').controller('TopicController', ['$scope', '$location', 'Au
         }
       ];
 
-        $scope.join = function() {
-            $scope.joined = true;
-        };
+      $scope.join = function() {
+        var joinModal = $modal.open({
+          animation: true,
+          templateUrl: 'modules/core/client/views/join.modal.client.view.html',
+          controller: 'ModalInstanceCtrl',
+          size: 'lg',
+          resolve: {
+            position: function() {
+              return (Math.random() > .5) ? "for" : "against";
+            }
+          }
+        });
+
+        joinModal.result.then(function (position) {
+          $scope.user.joined = true;
+          $scope.user.position = position;
+        }, function () {
+          $log.info('Modal dismissed at: ' + new Date());
+        });
+      };
 
         $scope.addPoint = function(pointType) {
             if (pointType === 'for') {
