@@ -3,8 +3,7 @@
   <div class="form-group">
     <div class='list-group'>
       <a href='#' class='list-group-item' ng-repeat='reaction in reactions' ng-click='react.value = reaction.value' ng-class="react.value === reaction.value ? 'active':''">
-        <p class='list-group-item-text'>
-          <div ng-class='reaction.value'></div>
+        <p class='list-group-item-text' ng-class='reaction.value'>
           {{reaction.title}} - {{reaction.description}}
         </p>
       </a>
