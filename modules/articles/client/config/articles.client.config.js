@@ -5,20 +5,28 @@ angular.module('articles').run(['Menus',
   function (Menus) {
     // Add the articles dropdown item
     Menus.addMenuItem('topbar', {
-      title: 'Articles',
-      state: 'articles',
+      title: 'Topics',
+      state: 'topics',
       type: 'dropdown',
       roles: ['*']
     });
 
     // Add the dropdown list item
-    Menus.addSubMenuItem('topbar', 'articles', {
-      title: 'List Articles',
-      state: 'articles.list'
+    Menus.addSubMenuItem('topbar', 'topics', {
+      title: 'Politics',
+      state: 'topics.politics'
+    });
+    Menus.addSubMenuItem('topbar', 'topics', {
+      title: 'Science',
+      state: 'topics.science'
+    });
+    Menus.addSubMenuItem('topbar', 'topics', {
+      title: 'Social Issues',
+      state: 'topics.social'
     });
 
     // Add the dropdown create item
-    Menus.addSubMenuItem('topbar', 'articles', {
+    Menus.addSubMenuItem('topbar', 'topics', {
       title: 'Create Articles',
       state: 'articles.create',
       roles: ['user']
