@@ -42,6 +42,49 @@ angular.module('core').controller('TopicController', ['$scope', '$location', 'Au
         }
       ];
 
+        $scope.join = function() {
+            $scope.joined = true;
+        };
+
+        $scope.addPoint = function(pointType) {
+            if (pointType === 'for') {
+                $scope.addingForPoint = true;
+            } else if (pointType === 'against') {
+                $scope.addingAgainstPoint = true;
+            }
+        };
+
+        $scope.submitPoint = function() {
+            // Add to messages
+            var newMessage = {
+                "position": $scope.addingForPoint ? 'for' : 'against',
+                "title": $scope.tldr,
+                "body": $scope.body,
+                "sources":[{
+                    "text": $scope.citation,
+                    "url": "wwww.url-in-support.com"
+                }],
+                comments: [],
+                created: new Date()
+            };
+            $scope.messages.push(newMessage);
+
+            $scope.clearFields();
+        };
+
+        $scope.clearFields = function() {
+            $scope.addingForPoint = false;
+            $scope.addingAgainstPoint = false;
+            $scope.tldr = '';
+            $scope.body = '';
+            $scope.citation = '';
+            $scope.citationExplanation = '';
+        };
+
+        $scope.canSubmit = function() {
+            return $scope.tldr && $scope.body && $scope.citation;
+        };
+
         // If user is not signed in then redirect back home
       if (!Authentication.user) {
         $location.path('/');
