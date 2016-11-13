@@ -61,8 +61,8 @@
                     </button>
                   </div>
                   <ul class="list-inline list-unstyled">
-                    <li class="pull-left">
-                        <span data-toggle='tooltip' class="img img-responsive" title="{{reaction.reason}}" ng-class='reaction.value' ng-repeat='reaction in message.reactions'></span>
+                    <li class="pull-left" ng-repeat='reaction in message.reactions'>
+                        <span data-toggle='tooltip' class="img img-responsive" title="{{reaction.reason}}" ng-class='reaction.value'></span>
                     </li>
                   </ul>
                   <small class="pull-right text-muted" ng-bind="message.created | date:'mediumTime'"></small>
