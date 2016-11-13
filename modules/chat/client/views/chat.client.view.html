@@ -57,8 +57,11 @@
                 <button type="button" class="btn btn-default btn-xs" aria-label="Add Reaction" ng-click="addReaction(message)" title="Add Reaction">
                   <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
                 </button>
-                <button type="button" class="btn btn-default btn-xs" aria-label="Flag" ng-click="addFlag(message)" title="Add Flag">
+                <button type="button" class="btn btn-default btn-xs" aria-label="Add Flag" ng-click="addFlag(message)" title="Add Flag">
                   <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-xs" aria-label="Add Comment" ng-click="addComment(message)" title="Add Comment">
+                  <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
                 </button>
               </div>
               <small class="pull-right text-muted" ng-bind="message.created | date:'mediumTime'"></small>
@@ -124,8 +127,11 @@
                 <button type="button" class="btn btn-default btn-xs" aria-label="Add Reaction" ng-click="addReaction(message)" title="Add Reaction">
                   <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
                 </button>
-                <button type="button" class="btn btn-default btn-xs" aria-label="Flag" ng-click="addFlag(message)" title="Add Flag">
+                <button type="button" class="btn btn-default btn-xs" aria-label="Add Flag" ng-click="addFlag(message)" title="Add Flag">
                   <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-default btn-xs" aria-label="Add Comment" ng-click="addComment(message)" title="Add Comment">
+                  <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
                 </button>
               </div>
               <small class="pull-right text-muted" ng-bind="message.created | date:'mediumTime'"></small>
