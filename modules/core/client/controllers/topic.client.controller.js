@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('core').controller('TopicController', ['$scope', '$location', 'Authentication', '$modal',
-    function ($scope, $location, Authentication, $modal) {
+angular.module('core').controller('TopicController',
+    function ($scope, $location, Authentication, $modal, $log) {
       $scope.user = {
 
       };
@@ -54,7 +54,7 @@ angular.module('core').controller('TopicController', ['$scope', '$location', 'Au
           size: 'lg',
           resolve: {
             position: function() {
-              return (Math.random() > .5) ? "for" : "against";
+              return (Math.random() > 0.5) ? "for" : "against";
             }
           }
         });
@@ -120,5 +120,17 @@ angular.module('core').controller('TopicController', ['$scope', '$location', 'Au
             // Clear the message text
             this.messageText = '';
         };
+        
+        $scope.addReaction = function (message){
+            $modal.open({
+                controller: 'ReactionsCtrl',
+                templateUrl: 'modules/core/client/views/chat.client.reaction.view.html'
+            })
+            .result
+            .then(function(reaction){
+                if (!message.reactions) message.reactions = [];
+                message.reactions.push(reaction);
+            });
+        };
     }
-]);
+);
