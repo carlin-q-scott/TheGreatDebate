@@ -28,6 +28,12 @@ angular.module('core').controller('TopicController',
                 username: "locke",
                 points: 700
               },
+                reactions: [
+                    {
+                        value: 'good-citation',
+                        reason: 'thanks for citing empirical data!'
+                    }
+                ],
               created: new Date()
           },
           {
@@ -74,6 +80,12 @@ angular.module('core').controller('TopicController',
                 username: "demosthenes",
                 points: 800
               },
+                reactions: [
+                    {
+                        value: 'low-quality-source',
+                        reason: 'wikipedia is great and all but anyone can edit an article'
+                    }
+                ],
               created: new Date()
           }
       ];
@@ -87,7 +99,7 @@ angular.module('core').controller('TopicController',
           resolve: {
             position: function() {
 
-              return (Math.random() > .5) ? "for" : "against";
+              return (Math.random() > 0.5) ? "for" : "against";
             },
             modalData: function() {
               return {};
@@ -128,7 +140,7 @@ angular.module('core').controller('TopicController',
                   "text": point.citation,
                   "url": "wwww.url-in-support.com"
               }],
-              user: user,
+              user: point.user,
               comments: [],
               created: new Date()
           };
